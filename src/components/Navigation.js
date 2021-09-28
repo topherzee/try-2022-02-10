@@ -25,7 +25,7 @@ function Navigation() {
 
       const url = apiBase + process.env.REACT_APP_MGNL_API_NAV + process.env.REACT_APP_MGNL_APP_BASE;
 
-      const response = await fetch(url + `?access_token=${process.env.REACT_APP_MGNL_SUB_ID}`);
+      const response = await fetch(url);
       const data = await response.json();
       let items = data['@nodes'].map((nodeName) => {
         return data[nodeName];
