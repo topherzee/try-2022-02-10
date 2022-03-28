@@ -45,12 +45,12 @@ class PageLoader extends React.Component {
 
     let templateJson = null;
     //if (EditorContextHelper.inEditorAsync()) {
-    //if (window.location.search.includes('mgnlPreview')) {
+    if (window.location.search.includes('mgnlPreview')) {
       console.log('apiBase:', apiBase);
       const templateResponse = await fetch(apiBase + process.env.REACT_APP_MGNL_API_ANNOTATIONS + pagePath + '?subid_token=' + process.env.REACT_APP_MGNL_SUB_ID);
       templateJson = await templateResponse.json();
       console.log('annotations: ', templateJson);
-    //}
+    }
 
     this.setState({
       init: true,
